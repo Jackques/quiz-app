@@ -1,0 +1,66 @@
+<html ng-app="quiz">
+<head>
+  <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/print.css" rel="stylesheet" type="text/css" />
+  <!--[if IE]>
+      <link href="stylesheets/ie.css" media="screen, projection" rel="styleshee
+t" type="text/css" />
+  <![endif]-->
+  
+<!--  <link href="stylesheets/style.css" rel="stylesheet" type="text/css" />-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+</head>
+<body>
+<h1>Jack's Prog quiz</h1>
+<p>{{ "Hello, Angular!" }}</p>
+    
+<div ng-controller="Instelblokken as Instelblok">
+    <form name="quizsettings" ng-submit="quizsettings.$valid && Instelblok.startquiz(Instelblok)" novalidate>
+        
+    <p>You will answer {{Instelblok.quizsettings.hoeveelheid.questions_chosen}} questions from HTML, CSS being open and multiple choice questions of easy difficulty.</p>
+    
+    <div class="{{settings.cssclass}}" ng-repeat="settings in Instelblok.quizsettings">
+            <div class="quiz_settings_panel {{Instelblok.ifSelected(settings.isSelected)}}">
+                <h3>{{ settings.question_text | limitTo:25 }}<h3>
+                <div class="quiz_settings_inputcontainer">
+                    <div ng-show="settings.imageicon.length">
+                        <img class="quiz_imageicon" ng-src="{{settings.imageicon}}" />
+                    </div>
+                    <div>
+                        
+                            <span ng-repeat="(key,value) in settings.questions_options">
+                                <input type="checkbox" name="vehicle" value="{{value}}" ng-model="this.value" ng-click="Instelblok.test(this.key)">{{key}}<br>
+                            </span>
+                        
+                    </div>
+                </div>
+            </div>
+
+        
+            </div>
+                <pre>zit klein bugje in.. als ik alle inputs op 'required' zet dan moet ik ze ook allemaal aanvinken om dit voor angular als een valid form te zien.</pre>
+                <p>test.. this form is {{quizsettings.$valid}}</p>
+                <button type="submit">VERZEND DIE BITCH</button>
+                </form>
+</div>
+        <div class="question_screen">
+            <div class="showmysettingsagain">
+
+            </div>
+            <div class="progressbar">
+            
+            </div>
+            <div class="question itself">
+            saljfisf
+            </div>
+            <div class="feedbackoradditionalexplaination">
+                
+            </div>
+            <div class="nextButton">
+            
+            </div>
+        </div>
+</body>
+</html>
