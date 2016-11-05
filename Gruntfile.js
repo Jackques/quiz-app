@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    //    require('load-grunt-tasks')(grunt); // dit doet het blijkbaar niet?
+    //grunt.loadNpmTasks('grunt-contrib-uglify');
+    require('load-grunt-tasks')(grunt); // dit doet het blijkbaar niet?
 
     // Project configuration.
     grunt.initConfig({
@@ -14,25 +14,21 @@ module.exports = function (grunt) {
                 dest: 'dist/<%= pkg.name %>.min.js'
             }
         },
-        compass: { // Task
-            dist: {
-                options: {
-                    config: 'config.rb', // css_dir = 'dev/css'
-                    cssDir: 'dist/css'
-                }
-            }
-            //            dev: { // Another target
-            //                options: {
-            //                    sassDir: 'sass',
-            //                    cssDir: 'stylesheets'
-            //                }
-            //            }
-        }
+		sass: {
+		  dist: {
+			options: {
+			  style: 'expanded',
+			  loadPath: ['bower_components/foundation/scss']
+			},
+			files: {
+			  'dist/screen.min.css': 'sass/screen.scss',
+			}
+		  }
+		}
     });
 
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify']);
-    grunt.registerTask('compass', ['compass']);
+    grunt.registerTask('default', ['uglify', 'sass']);
 
 };

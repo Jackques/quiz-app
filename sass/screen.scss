@@ -1,7 +1,23 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
-@import "compass/reset";
-@import "style";
+.quiz_settings_panel{
+	width:35%;
+    margin-left:5%;
+    margin-right:5%;
+	height:200px;
+	display:inline-block;
+	
+	&--blue{
+		background-color:blue;
+	}
+	&--green{
+		background-color:green;
+	}
+	&--orange{
+		background-color:orange;
+	}
+	&--yellow{
+		background-color:yellow;
+	}
+}
+.quiz_settings_panel--active{
+	background-color:red;   
+}

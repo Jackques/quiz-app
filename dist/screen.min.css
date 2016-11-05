@@ -1,0 +1,17 @@
+.quiz_settings_panel {
+  width: 35%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 200px;
+  display: inline-block; }
+  .quiz_settings_panel--blue {
+    background-color: blue; }
+  .quiz_settings_panel--green {
+    background-color: green; }
+  .quiz_settings_panel--orange {
+    background-color: orange; }
+  .quiz_settings_panel--yellow {
+    background-color: yellow; }
+
+.quiz_settings_panel--active {
+  background-color: red; }
